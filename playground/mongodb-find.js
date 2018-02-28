@@ -23,13 +23,17 @@ MongoClient.connect('mongodb://localhost/TodoApp', (err, client) => {
 //       console.log('unable to fetch database', err)
 //   })
     
-    db.collection('Users').find({
-        name: 'Juan'
-    }).toArray().then((docs) => {
-        console.log('Users')
-        console.log(JSON.stringify(docs, undefined, 2))
-    }, (err) => {
-        console.log('Unable to fetch database', err)
-    });
+    // db.collection('Users').find({
+    //     name: 'Juan'
+    // }).toArray().then((docs) => {
+    //     console.log('Users')
+    //     console.log(JSON.stringify(docs, undefined, 2))
+    // }, (err) => {
+    //     console.log('Unable to fetch database', err)
+    // });
+    
+    db.collection('Users').find().then((data) => {
+        console.log(JSON.stringify(data, undefined, 2))
+    })
     
 })
