@@ -23,7 +23,7 @@ app.post('/todos',(req, res)=>{
 
 
 
-
+module.exports = {app};
 
 app.listen(process.env.PORT,process.env.IP, ()=> {
     console.log('Connected to server')
