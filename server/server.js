@@ -6,7 +6,7 @@ var express    = require('express');
 var bodyParser = require('body-parser');
 
 var app =  express();
-
+const port = process.env.PORT || 8080;
 app.use(bodyParser.json());
 
 app.post('/todos',(req, res)=>{
@@ -52,8 +52,8 @@ app.get('/todos/:id', (req, res) =>{
 
 module.exports = {app};
 
-app.listen(process.env.PORT,process.env.IP, ()=> {
-    console.log('Connected to server')
+app.listen(port, () => {
+    console.log(`Started up at port ${port}`);
 });
 
 
